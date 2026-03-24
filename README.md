@@ -195,4 +195,6 @@ fs.mkdirSync("my-docs/a/b", { recursive: true });
 
 <img width="1151" height="675" alt="image" src="https://github.com/user-attachments/assets/af03a8a4-c34d-4cb7-a3c2-bce3b3c9e6c5" />
 
+<img width="1178" height="642" alt="image" src="https://github.com/user-attachments/assets/76772600-4668-464a-927f-a1729426b9dc" />
+
 
