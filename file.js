@@ -32,6 +32,8 @@ fs.readFile("./contact.txt", "utf-8", (err, result) => {
 //   if(err) {
 //     console.log("Error", err)
 //   } else {
+
+
 //     console.log(result)
 //   }
 // }
@@ -46,5 +48,31 @@ fs.readFile("./contact.txt", "utf-8", (err, result) => {
 // wehn we use writeFile or writeFileSync then it overRite the content.
 // But i want that it add the new content and don't delete the older one so we use append
 
-// fs.appendFileSync(".test.txt", new Date().getDate().toLocaleString());
-fs.appendFileSync(".test.txt", `Hey Append \n`);
+// This is sync... call
+fs.appendFileSync("./test.txt", `Hey Append \n`);
+
+
+// This is Async... call
+fs.appendFile("./test.txt", `Hey Append \n`, (err) => {
+  if(err){
+    console.log("Error", err)
+  } else {
+    console.log("Data appended successfully")
+  }
+});
+
+
+// Copy a file in Node.js
+fs.cpSync("./test.txt", "./copy.txt");
+
+// Delete a file in Node.js
+// fs.unlinkSync("./copy.txt")
+
+// Status of file in Node.js
+console.log(fs.statSync("./test.txt"))
+
+// Make Single Directory in node.js
+// fs.mkdirSync("my-docs")
+
+// Make Folder Inside Directory in node.js
+fs.mkdirSync("my-docs/a/b", {recursive: true})
