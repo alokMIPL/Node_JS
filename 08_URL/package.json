@@ -1,0 +1,15 @@
+{
+  "name": "08_url",
+  "version": "1.0.0",
+  "description": "<img width=\"1267\" height=\"864\" alt=\"image\" src=\"https://github.com/user-attachments/assets/87cdb1fb-ed82-47e3-8254-fdc77a0ee19b\" />",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "url": "^0.11.4"
+  }
+}
