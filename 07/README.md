@@ -1,48 +1,124 @@
-# Node JS 07
+## Node.js HTTP Server – Complete Learning Guide
 
-## Basic Node.js HTTP Server
 
-This project demonstrates how to create a simple HTTP server using Node.js.
+## Modules Used
 
 ```js
 const http = require("http");
+const fs = require("fs");
 ```
 
-* `http` → Built-in Node.js module to create web servers
+* `http` → Create server and handle requests
+* `fs` → Work with file system (logging requests)
 
+## Learning Progress (Step-by-Step)
 
-## How It Works
-
-* A server is created using `http.createServer()`
-* It listens for incoming requests on a specific port
-* Sends a response back to the client
-
-
-## Code Overview
+### 1. Basic Server
 
 ```js
-const http = require("http");
-
 const myServer = http.createServer((req, res) => {
   console.log("New Request Rec...");
   res.end("Hello From Server");
 });
+```
 
+### 2. Inspect Full Request Object
+
+```js
+const myServer = http.createServer((req, res) => {
+  console.log(req);
+  res.end("Hello From Server");
+});
+```
+
+###  3. Log Requests to File
+
+```js
+const myServer = http.createServer((req, res) => {
+  const log = `${Date.now()}: New Req received\n`;
+  fs.appendFile("./log.txt", log, (err, data) => {
+    res.end("Hello From Server");
+  });
+});
+```
+
+### 4. Log Request URL
+
+```js
+const myServer = http.createServer((req, res) => {
+  const log = `${Date.now()}: ${req.url} New Req received\n`;
+  fs.appendFile("./log.txt", log, (err, data) => {
+    res.end("Hello From Server");
+  });
+});
+```
+
+### 5. Routing with Switch Case (Final Implementation)
+
+```js
+const myServer = http.createServer((req, res) => {
+  const log = `${Date.now()}: ${req.url} New Req received\n`;
+
+  fs.appendFile("./log.txt", log, (err, data) => {
+    switch (req.url) {
+      case "/":
+        res.end("Home page");
+        break;
+      case "/about":
+        res.end("About page");
+        break;
+      case "/contact":
+        res.end("Contact page");
+        break;
+      case "/booking":
+        res.end("Booking page");
+        break;
+      default:
+        res.end("400 Not Found.");
+    }
+  });
+});
+```
+## Start Server
+
+```js
 myServer.listen(8000, () => {
   console.log("Server Started>>>>>");
 });
 ```
 
-## Key Concepts
+## How to Run
 
-* `createServer()` → Creates HTTP server
-* `req` → Incoming request object
+1. Open terminal in project folder
+2. Run:
+
+```bash
+node file.js
+```
+
+3. Open browser:
+
+```
+http://localhost:8000
+```
+
+## Available Routes
+
+| URL        | Response      |
+| ---------- | ------------- |
+| `/`        | Home page     |
+| `/about`   | About page    |
+| `/contact` | Contact page  |
+| `/booking` | Booking page  |
+| Others     | 400 Not Found |
+
+
+## Key Concepts Covered
+
+* `http.createServer()` → Create server
+* `req` → Request object
 * `res` → Response object
-* `res.end()` → Sends response to client
-* `listen()` → Starts server on a port
-
-
-## Output
-
-* Terminal: `Server Started>>>>>`
-* Browser: `Hello From Server`
+* `req.url` → Requested route
+* `res.end()` → Send response
+* `fs.appendFile()` → Async logging
+* Routing using `switch`
