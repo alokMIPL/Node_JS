@@ -1,4 +1,4 @@
-## The Primary HTTP Methods
+## HTTP Methods in Node.js
 
 ### GET (Retrieve)
 * Purpose: To fetch data from the server.
