@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 
-// We can send different response for different url visit using switch case.
+// using different Search Query
 const myServer = http.createServer((req, res) => {
   const log = `${Date.now()}: ${req.url} New Req received\n`;
   const myUrl = url.parse(req.url, true);
@@ -15,6 +15,7 @@ const myServer = http.createServer((req, res) => {
         const username = myUrl.query.username
         res.end(`Hi ${username}`);
         // res.end("About page");
+        // we use this url http://localhost:8000/about?username=alok&userId=20&age=30&search=ball
       break;
       case "/contact" : res.end("Contact page");
       break;
