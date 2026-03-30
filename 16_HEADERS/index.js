@@ -26,9 +26,30 @@ app.use((req,res, next) => {
   next();
 })
 
-app.use((req,res, next) => {
-  console.log("Hello from middelware 2")
-  return res.json( { msg: "Hey" })
+// app.use((req,res, next) => {
+//   console.log("Hello from middelware 2")
+//   return res.json( { msg: "Hey" })
+// })
+
+// Custom Headers
+app.get("/api/users", (req, res) => {
+  res.setHeader("myHeader", "Hello from custom header"); //custom header
+  // Whenever set a custom header, use X before the header name, so that it will be clear that this is a custom header and not a standard header.
+  console.log(req.headers)
+  // I get these headers in the request
+
+  //  {
+  //   purpose: 'Youtube Header From Request',
+  //   'user-agent': 'PostmanRuntime/7.51.1',
+  //   accept: '*/*',
+  //   'cache-control': 'no-cache',
+  //   'postman-token': '6d42baf2-5261-4e20-bd2b-7d437bb288cb',
+  //   host: 'localhost:8000',
+  //   'accept-encoding': 'gzip, deflate, br',
+  //   connection: 'keep-alive'
+  // }
+
+  return res.json(users)
 })
 
 // Routes
