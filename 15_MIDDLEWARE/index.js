@@ -26,6 +26,11 @@ app.use((req,res, next) => {
   next();
 })
 
+app.use((req,res, next) => {
+  console.log("Hello from middelware 2")
+  return res.json( { msg: "Hey" })
+})
+
 // Routes
 app.get("/api/users", (req, res) => {
   return res.json(users)
