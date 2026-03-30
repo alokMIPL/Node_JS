@@ -1,0 +1,25 @@
+REST API - JSON
+
+GET /users - List of all users
+
+GET /users/1 - Get the user with ID 1
+GET /users/2 - Get the user with ID 2
+
+POST /users - Create new user
+
+PATCH /users/1 - Edit the user with ID 1
+
+DELETE /users/1 - Delete the user with ID 1
+
+Now we add /api in font of every url so we conform that the by hitting this url it gives me JSON data and if url does not have /api means it return a HTML structure. 
+
+GET /api/users - List of all users   - DONE
+
+GET /api/users/1 - Get the user with ID 1   - DONE
+GET /api/users/2 - Get the user with ID 2   - DONE
+
+POST /api/users - Create new user   - DONE
+
+PATCH /api/users/1 - Edit the user with ID 1   - DONE
+
+DELETE /api/users/1 - Delete the user with ID 1   - DONE
