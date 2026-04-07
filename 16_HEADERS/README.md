@@ -6,3 +6,8 @@
 
 ## Header Status Code
 <img width="1531" height="647" alt="image" src="https://github.com/user-attachments/assets/5f996c99-8658-4952-8761-f6769a0bf1f6" />
+<img width="1199" height="489" alt="image" src="https://github.com/user-attachments/assets/931cf7e8-f5f9-42b1-ab3d-fe2e72cc6090" />
+<img width="1192" height="832" alt="image" src="https://github.com/user-attachments/assets/db14899f-5493-4fc2-b22c-72c04f235b69" />
+<img width="1191" height="820" alt="image" src="https://github.com/user-attachments/assets/258caa56-0f83-44cf-9143-75a3d1a1300c" />
+<img width="1189" height="888" alt="image" src="https://github.com/user-attachments/assets/68a4ea24-52fd-4145-944b-0cb1d7b12097" />
+<img width="1185" height="855" alt="image" src="https://github.com/user-attachments/assets/07ecadc4-9535-44c4-981e-ae93ff9797bb" />
