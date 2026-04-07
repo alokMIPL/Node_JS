@@ -33,7 +33,7 @@ app.use((req,res, next) => {
 
 // Custom Headers
 app.get("/api/users", (req, res) => {
-  res.setHeader("myHeader", "Hello from custom header"); //custom header
+  res.setHeader("X-myHeader", "Hello from custom header"); //custom header
   // Whenever set a custom header, use X before the header name, so that it will be clear that this is a custom header and not a standard header.
   console.log(req.headers)
   // I get these headers in the request
